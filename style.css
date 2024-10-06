@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0c192c;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #555;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+.button-container {
+    position: relative;
+    height: 100vh;
+}
+
+.animated-button {
+    
+    background-color: #61dafb;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    outline: none;
+    transition: background-color 0.7s ease;
+}
+
+.animated-button:hover {
+    background-color: rgb(0, 0, 166) ;
+
+}
+
+.explosion-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.dot {
+    position: absolute;
+    width: 15px; /* Increased size */
+    height: 15px; /* Increased size */
+    border-radius: 50%;
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease; /* Extended duration */
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0); }
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex ;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50% ;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+@keyframes animate {
+ 0%{
+    transform: translateY(100vh) scale(0);
+ }
+ 100%{
+    transform: translateY(-10vh) scale(1);
+ }
+}
+.alipoem {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.poem-line {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin: 10px 0;
+}
